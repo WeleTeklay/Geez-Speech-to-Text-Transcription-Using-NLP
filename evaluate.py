@@ -6,9 +6,11 @@ Usage:
 """
 
 import argparse
+from pathlib import Path
 import torch
 from tqdm import tqdm
-import evaluate as hf_evaluate
+import importlib
+hf_evaluate = importlib.import_module("evaluate")
 from transformers import WhisperForConditionalGeneration, WhisperProcessor
 
 from data_utils import load_dataset
@@ -18,8 +20,8 @@ def evaluate_model(model_dir: str, data_path: str):
 
     # Load fine-tuned model and processor
     print(f"Loading model from {model_dir} ...")
-    model = WhisperForConditionalGeneration.from_pretrained(model_dir, local_files_only=True)
-    processor = WhisperProcessor.from_pretrained(model_dir, local_files_only=True)
+    model = WhisperForConditionalGeneration.from_pretrained(Path(model_dir))
+    processor = WhisperProcessor.from_pretrained(Path(model_dir))
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = model.to(device)
