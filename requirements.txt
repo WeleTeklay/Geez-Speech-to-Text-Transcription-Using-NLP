@@ -6,4 +6,3 @@ jiwer
 evaluate
 accelerate
 librosa
-ethiopic
