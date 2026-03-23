@@ -18,8 +18,8 @@ def evaluate_model(model_dir: str, data_path: str):
 
     # Load fine-tuned model and processor
     print(f"Loading model from {model_dir} ...")
-    model = WhisperForConditionalGeneration.from_pretrained(model_dir)
-    processor = WhisperProcessor.from_pretrained(model_dir)
+    model = WhisperForConditionalGeneration.from_pretrained(model_dir, local_files_only=True)
+    processor = WhisperProcessor.from_pretrained(model_dir, local_files_only=True)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = model.to(device)

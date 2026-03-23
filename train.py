@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 
 import torch
-import evaluate
+import evaluate as hf_evaluate
 from transformers import (
     WhisperProcessor,
     WhisperTokenizer,
@@ -93,7 +93,7 @@ def main(data_path: str, output_dir: str):
     test_dataset = test_dataset.map(preprocess, remove_columns=test_dataset.column_names)
 
     # WER metric
-    wer_metric = evaluate.load("wer")
+    wer_metric = hf_evaluate.load("wer")
 
     def compute_metrics(pred):
         pred_ids = pred.predictions

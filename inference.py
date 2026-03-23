@@ -15,8 +15,8 @@ def transcribe(model_dir: str, audio_path: str) -> str:
 
     # Load model and processor
     print(f"Loading model from {model_dir} ...")
-    model = WhisperForConditionalGeneration.from_pretrained(model_dir)
-    processor = WhisperProcessor.from_pretrained(model_dir)
+    model = WhisperForConditionalGeneration.from_pretrained(model_dir, local_files_only=True)
+    processor = WhisperProcessor.from_pretrained(model_dir, local_files_only=True)
 
     device = 0 if torch.cuda.is_available() else -1
 
