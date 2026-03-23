@@ -6,6 +6,7 @@ Usage:
 """
 
 import argparse
+from pathlib import Path
 import torch
 import torchaudio
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, pipeline
@@ -15,8 +16,8 @@ def transcribe(model_dir: str, audio_path: str) -> str:
 
     # Load model and processor
     print(f"Loading model from {model_dir} ...")
-    model = WhisperForConditionalGeneration.from_pretrained(model_dir, local_files_only=True)
-    processor = WhisperProcessor.from_pretrained(model_dir, local_files_only=True)
+    model = WhisperForConditionalGeneration.from_pretrained(Path(model_dir))
+    processor = WhisperProcessor.from_pretrained(Path(model_dir))
 
     device = 0 if torch.cuda.is_available() else -1
 
