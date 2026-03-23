@@ -11,7 +11,8 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 
 import torch
-import evaluate as hf_evaluate
+import importlib
+hf_evaluate = importlib.import_module("evaluate")
 from transformers import (
     WhisperProcessor,
     WhisperTokenizer,
