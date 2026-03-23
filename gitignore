@@ -1,0 +1,35 @@
+# Model checkpoints
+whisper-finetuned/
+*.pt
+*.bin
+*.safetensors
+
+# Data (not included — see README)
+data/
+*.csv
+*.wav
+*.mp3
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.env
+venv/
+env/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+runs/
+logs/
+tensorboard/
+
+# OS
+.DS_Store
+Thumbs.db
