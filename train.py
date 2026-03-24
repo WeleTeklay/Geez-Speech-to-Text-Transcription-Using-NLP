@@ -83,7 +83,7 @@ def main(data_path: str, output_dir: str):
     train_dataset, test_dataset = load_dataset(data_path)
 
     def preprocess(batch):
-        audio = batch["path"]
+        audio = batch["audio"]
         batch["input_features"] = feature_extractor(
             audio["array"], sampling_rate=16000
         ).input_features[0]

@@ -40,7 +40,7 @@ def evaluate_model(model_dir: str, data_path: str):
 
     print("Running inference on test set...")
     for sample in tqdm(test_dataset):
-        audio_data = sample["path"]
+        audio_data = sample["audio"]
         input_features = processor(
             audio_data["array"], sampling_rate=16000, return_tensors="pt"
         ).input_features.to(device)

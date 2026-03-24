@@ -21,12 +21,12 @@ def load_dataset(csv_path: str, test_size: float = 0.1, seed: int = 42):
         train_dataset, test_dataset (HuggingFace Dataset objects)
     """
     df = pd.read_csv(csv_path)
-    df['path'] = df['audio_path'].str.replace('All_voices', 'voice')
+    df['audio'] = df['audio_path'].str.replace('All_voices', 'voice')
     df['transcription'] = df['text'].apply(clean_text)
     df = df.drop(columns=['audio_path', 'text'])
 
     dataset = Dataset.from_pandas(df)
-    dataset = dataset.cast_column("path", Audio(sampling_rate=16000))
+    dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
 
     split = dataset.train_test_split(test_size=test_size, seed=seed)
     return split['train'], split['test']
