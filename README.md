@@ -1,16 +1,16 @@
-# 🎙️ Whisper Fine-Tuning for Ge'ez Speech-to-Text Transcription
+#  Whisper Fine-Tuning for Ge'ez Speech-to-Text Transcription
 
 > Fine-tuning OpenAI's Whisper model for automatic speech recognition (ASR) on **Ge'ez** — an ancient Semitic script used in Ethiopian and Eritrean languages — addressing the challenge of ASR for low-resource languages with non-Latin scripts.
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Ge'ez (ግዕዝ) is a classical Ethiopic script used in liturgical and written forms of languages such as Amharic and Tigrigna. Despite its cultural significance, it remains severely underrepresented in modern ASR systems. This project fine-tunes [OpenAI's Whisper-Small](https://huggingface.co/openai/whisper-small) on a custom Ge'ez audio dataset to build a baseline transcription system for this low-resource language.
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 - Fine-tuned `openai/whisper-small` on a custom Ge'ez speech dataset
 - Custom Ge'ez Unicode token extension (`U+1200–U+137F`) for accurate script handling
@@ -21,7 +21,7 @@ Ge'ez (ግዕዝ) is a classical Ethiopic script used in liturgical and written 
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 Geez-Speech-to-Text-Transcription-Using-NLP/
@@ -37,7 +37,7 @@ Geez-Speech-to-Text-Transcription-Using-NLP/
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Component | Library |
 |---|---|
@@ -51,7 +51,7 @@ Geez-Speech-to-Text-Transcription-Using-NLP/
 
 ---
 
-## ⚙️ Setup
+##  Setup
 
 ```bash
 git clone https://github.com/WeleTeklay/Geez-Speech-to-Text-Transcription-Using-NLP.git
@@ -65,7 +65,7 @@ sudo apt-get install -y ffmpeg
 
 ---
 
-## 📦 Dataset Format
+##  Dataset Format
 
 The dataset is a CSV file with two columns:
 
@@ -81,7 +81,7 @@ Audio files should be `.wav` format, mono channel, resampled to **16kHz**.
 
 ---
 
-## 🚀 Training
+##  Training
 
 ```bash
 python train.py \
@@ -93,7 +93,7 @@ The tokenizer is extended with Ge'ez Unicode characters (`U+1200–U+137F`) befo
 
 ---
 
-## 📊 Evaluation
+##  Evaluation
 
 ```bash
 python evaluate.py \
@@ -104,14 +104,14 @@ python evaluate.py \
 Evaluation is performed on a held-out test set (10% split, `seed=42`) using **Word Error Rate (WER)**:
 
 ```
-📊 Full WER: 0.2000  (20.00%)
+ Full WER: 0.2000  (20.00%)
 ```
 
 > A 20% WER is competitive for low-resource languages with non-Latin scripts, where baseline multilingual models without fine-tuning typically perform significantly worse.
 
 ---
 
-## 🔍 Inference
+##  Inference
 
 ```bash
 python inference.py \
@@ -121,17 +121,17 @@ python inference.py \
 
 ---
 
-## 🌍 Why This Matters
+##  Why This Matters
 
-Ge'ez and related Ethiopic scripts serve over **120 million speakers** across Ethiopia and Eritrea. Despite this, they remain among the most underrepresented language families in speech technology research. This project is a step toward:
+Ge'ez is a classical Semitic language used primarily in the Ethiopian Orthodox and Eritrean Orthodox churches as a liturgical language. Despite its deep cultural and religious significance across Ethiopia and Eritrea, it remains almost entirely absent from modern speech technology research. This project is a step toward:
 
-- Building accessible voice interfaces for Ethiopic-script languages
-- Establishing ASR baselines for low-resource Semitic languages
-- Supporting digital preservation of classical Ge'ez texts
+- Preserving and digitizing classical Ge'ez liturgical texts through speech technology
+- Establishing ASR baselines for an extremely low-resource and underrepresented language
+- Supporting the broader goal of inclusive NLP for African and Semitic languages
 
 ---
 
-## 👤 Author
+##  Author
 
 **Weldesemayat Teklay Gebre**
 BSc. Computer Science and Engineering — Mekelle Institute of Technology, Mekelle University
@@ -140,13 +140,9 @@ BSc. Computer Science and Engineering — Mekelle Institute of Technology, Mekel
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
----
-
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 - [OpenAI Whisper](https://github.com/openai/whisper) for the base model
 - [HuggingFace](https://huggingface.co) for the Transformers and Datasets libraries
