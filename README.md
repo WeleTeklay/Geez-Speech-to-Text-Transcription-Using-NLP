@@ -135,6 +135,7 @@ Ge'ez is a classical Semitic language used primarily in the Ethiopian Orthodox a
 
 **Weldesemayat Teklay Gebre**
 BSc. Computer Science and Engineering — Mekelle Institute of Technology, Mekelle University
+
 📧 weleteklay2127@gmail.com
 🔗 [LinkedIn](https://www.linkedin.com/in/weldesemayat-teklay-66000019a)
 
