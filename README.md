@@ -71,8 +71,8 @@ The dataset is a CSV file with two columns:
 
 ```
 audio_path,text
-All_voices/sample_001.wav,ሰላም ዓለም
-All_voices/sample_002.wav,እንደምን አለህ
+All_voices/sample_001.wav,ሖረ
+All_voices/sample_002.wav,ሮጸት
 ```
 
 Audio files should be `.wav` format, mono channel, resampled to **16kHz**.
